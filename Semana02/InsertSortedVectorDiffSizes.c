@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX_TAM 100
+#define LEN 100
 
 // Inserir ordenado
 void insertionSort(int array[], int size) {
@@ -29,8 +29,8 @@ void printArray(int v[], int size) {
 
 void main() {
 
-    int vetor[MAX_TAM];
-    int num, i, j, passo = 0;
+    int array[LEN];
+    int num, i, j, step = 0;
 
     while(num >= 0) {
 
@@ -38,17 +38,17 @@ void main() {
         scanf("%d", &num);
 
         // Preparar o vetor geral
-        vetor[passo] = num;
+        array[step] = num;
 
         // Preparar vetor ordenado
-        int array[passo];
-        for(i = 0; i < passo; i++) {
-            array[i] = vetor[i];
+        int sortedArray[step];
+        for(i = 0; i < step; i++) {
+            sortedArray[i] = array[i];
         }
-        insertionSort(array, passo);
-        printArray(array, passo);
+        insertionSort(sortedArray, step);
+        printArray(sortedArray, step);
 
-        passo++;
+        step++;
     }
 
 }
