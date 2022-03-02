@@ -9,6 +9,7 @@ void imprime_vetor(int vetor[], int tamanhoVetor) {
     for (int i = 0; i < tamanhoVetor; i++) {
         printf("%d ", vetor[i]);
     }
+    printf("\n");
 }
 
 void duplica_impares(int vetor[], int qtd) {
