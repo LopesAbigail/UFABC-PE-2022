@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 void remover_duplicados(int vetor[], int qtd) {
-  int i, j, k, qtd_intens_duplicados = 0;
+  int i, j, k, qtd_itens_duplicados = 0;
+  int a = qtd+1;
   //int tamanho = sizeof(vetor) / sizeof(vetor[0]);
 
   // Percorre o vetor
@@ -11,13 +12,14 @@ void remover_duplicados(int vetor[], int qtd) {
           // Se o item seguinte for igual ao item atual
           if (vetor[i] == vetor[j]) {
               // Achei + um item duplicado
-              qtd_intens_duplicados++;
+              qtd_itens_duplicados++;
               // Percorre os demais itens
               for (k = j; k < qtd-1; k++) {
                   // Remove o duplicado, passando todos os demais itens para a esquerda
                   vetor[k] = vetor[k+1];
               }
-              //vetor[qtd-qtd_intens_duplicados] = -1;
+              // Coloca o valor -1 na última posicao ateh completar o vetor
+              vetor[a-1-qtd_itens_duplicados] = -1;
               qtd--;
               j--;
 
@@ -27,7 +29,8 @@ void remover_duplicados(int vetor[], int qtd) {
 
     }
 
-    printf("\nQunt duplicados: %d\n", qtd_intens_duplicados);
+
+    printf("\nQunt. duplicados: %d\n", qtd_itens_duplicados);
 
   imprime_vetor(vetor, qtd);
 }
