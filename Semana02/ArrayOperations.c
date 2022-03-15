@@ -1,3 +1,6 @@
+#define MAX_LINHAS 100
+#define MAX_COLUNAS 100
+
 void soma(int a[MAX_LINHAS][MAX_COLUNAS], int b[MAX_LINHAS][MAX_COLUNAS], int n_linhas, int n_colunas, int resp[MAX_LINHAS][MAX_COLUNAS])
 {
     // Escreva aqui o seu codigo !
@@ -139,4 +142,8 @@ void multiplicacao(int a[MAX_LINHAS][MAX_COLUNAS], int b[MAX_LINHAS][MAX_COLUNAS
         }
     }
 
+}
+
+void main() {
+    // call functions >.<
 }
