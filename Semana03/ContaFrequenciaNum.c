@@ -1,36 +1,27 @@
 #include <stdio.h>
 
 int contafreq(int num, int digito) {
-   int count = 1;
 
-   if (num >= 10)
-   {
-       num = num / 10;
-       if ((num % 10) != 0)
-       {
-           count = 1 + contafreq(num, digito);
-       }
-       else
-       {
-           count = contafreq(num, digito);
-       }
-
-   }
-
-   return count;
-
+    if (num == 0) {
+        return 0;
+    }
+    else {
+        if ((num % 10) == digito) {
+            num = num / 10;
+            return 1 + contafreq(num, digito);
+        } else {
+            num = num / 10;
+            return contafreq(num, digito);
+        }
+    }
 }
 
 void main () {
     int num, digito, freq = 0;
-    num = 1222222422;
-    digito = 2;
 
-    //printf("Numero: ");
-    //scanf("%1d", &num);
-
-    //printf("\nDigito: ");
-    //scanf("%1d", &digito);
+    //printf("Numero e digito: ");
+    scanf("%1d", &num);
+    scanf("%1d", &digito);
 
     freq = contafreq(num, digito);
 
