@@ -1,8 +1,10 @@
+// Não declare vetor com colchetes
+// Use malloc para alocar o vetor (e lembre-se de usar free para liberar a memória alocada com malloc)
 #include<stdio.h>
 #include<stdlib.h>
 
 // Inserir ordenado
-void insertionSort(int array[], int size) {
+void insertionSort(double *array, int size) {
 
     for (int step = 1; step < size; step++) {
         int key = array[step];
@@ -18,45 +20,49 @@ void insertionSort(int array[], int size) {
 }
 
 // Imprimir um array
-void printArray(int v[], int size) {
+void printArray(double *v, int size) {
 
     for (int i = 0; i < size; i++) {
-        printf("%d ", v[i]);
+        printf("%.1f ", v[i]);
     }
 
     printf("\n");
 }
 
-void main() {
+// tipo int para indicar o status da ocorrencia do programa principal
+int main() {
 
     int len_array;
-    printf("\nTamanho\n");
-    scanf("%d ", &len_array);
+    scanf("%d", &len_array);
 
-    double *array = malloc(sizeof(int) * len_array);
+    double *array = malloc(sizeof(double) * len_array);
     int num, i, j, step = 0;
 
-    while(num >= 0) {
+    while(num != -1) {
 
         // Ler entrada
-        printf("\nEntrada %d\n", step);
-        scanf("%d ", &num);
+        scanf("%d", &num);
 
         // Preparar o vetor geral
         array[step] = num;
 
         // Preparar vetor ordenado
-        int sortedArray[step];
+        double *sortedArray = malloc(sizeof(double) * step);
         for(i = 0; i < step; i++) {
             sortedArray[i] = array[i];
         }
+
         insertionSort(sortedArray, step);
         printArray(sortedArray, step);
 
         step++;
+
+        free(sortedArray);
     }
 
     free(array);
+
+    return 0;
 
 }
 
