@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 
 int eh_impar (int num) {
@@ -67,9 +67,9 @@ void *duplica_impares (int *v, int n_entrada, int *n_retorno) {
         printf ("%d ", vetor_int[i]);
     }
 
-    *n_retorno = quant_impares;
+    *n_retorno = tamanho_vetor_retorno;
 
-
+    free(vetor_int);
 
     /*
     printf("\nv_retorno\n");
