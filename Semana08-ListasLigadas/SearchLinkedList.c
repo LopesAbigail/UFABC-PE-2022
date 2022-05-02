@@ -14,8 +14,8 @@ struct lista {
     Fornecer endereco inicial da lista em que queremos procurar
 */
 lista *procurarValor (lista *pLista, int numero) {
-
      // Enquanto nao chegar no final da lista ligada
+
      while(pLista != (struct lista *)0){
         // se o atributo valor da lista for igual ao numero recebido como parametro
         if(pLista->valor == numero){
